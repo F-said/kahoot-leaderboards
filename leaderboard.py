@@ -33,4 +33,4 @@ student_df['name'] = student_df.apply(lambda row: f"{add_medal(row['rank'])} {ro
 student_df.drop(columns=['rank'], inplace=True)
 
 # display
-st.dataframe(student_df)
+st.table(student_df)
