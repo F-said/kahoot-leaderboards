@@ -27,7 +27,7 @@ st.text("🥇 1st place; 🥈 2nd place; 🥉 3rd place; 🎖️ 4th–10th")
 student_df = pd.read_csv(STUDENT_PATH)
 
 # sort and assign ranking
-student_df = student_df.sort_values(by="score").reset_index(drop=True)
+student_df = student_df.sort_values(by="score", ascending=False).reset_index(drop=True)
 student_df['rank'] = student_df.index
 student_df['name'] = student_df.apply(lambda row: f"{add_medal(row['rank'])} {row['name']}", axis=1)
 student_df.drop(columns=['rank'], inplace=True)
