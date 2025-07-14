@@ -18,7 +18,7 @@ def add_medal(rank):
 
 
 # path to student file
-STUDENT_PATH = r'students.csv'
+STUDENT_PATH = r'score.csv'
 
 st.title("Kahoot Leaderboard (Cohort A & Cohort B)")
 st.text("🥇 1st place; 🥈 2nd place; 🥉 3rd place; 🎖️ 4th–10th")
