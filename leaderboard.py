@@ -26,6 +26,15 @@ st.text("🥇 1st place; 🥈 2nd place; 🥉 3rd place; 🎖️ 4th–10th")
 # load data
 student_df = pd.read_csv(STUDENT_PATH)
 
+# convert to ints
+num_cols = student_df.select_dtypes(include="number").columns
+student_df[num_cols] = (
+    student_df[num_cols]
+    .apply(pd.to_numeric, errors="coerce")
+    .round(0)
+    .astype("Int64")
+)
+
 # sort and assign ranking
 student_df = student_df.sort_values(by="Total Score (points)", ascending=False).reset_index(drop=True)
 student_df['Rank'] = student_df.index
